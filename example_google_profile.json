@@ -1,0 +1,23 @@
+{
+    "access_token":"...",
+    "expires_at":1776294238,
+    "expires_in":86400,
+    "id_token":"...",
+    "scope":"openid profile email",
+    "token_type":"Bearer",
+    "userinfo":{
+       "aud":"...",
+       "email":"example@gmail.com",
+       "email_verified":true,
+       "exp":1776243838,
+       "iat":1776207838,
+       "iss":"https://....us.auth0.com/",
+       "name":"example@gmail.com",
+       "nickname":"example",
+       "nonce":"...",
+       "picture":"https://s.gravatar.com/avatar/example.png",
+       "sid":"...",
+       "sub":"...",
+       "updated_at":"2026-04-14T23:01:11.184Z"
+    }
+ }

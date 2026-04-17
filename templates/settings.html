@@ -1,0 +1,24 @@
+<main style="display: flex; flex-direction: column; align-items: center; background-color: #f1f1f1; height: 100%; font-size: 1.25rem;">
+    <h1>Settings</h1>
+
+    {% if session %}
+        <p>Welcome <span style="color: blueviolet; font-weight: 600;">{{ session.userinfo.name }}</span></p>
+
+        {% if session.userinfo.nickname %}
+            <p><b>Nickname: </b><span style="color: chocolate; font-weight: 600;">{{ session.userinfo.nickname }}</span></p>
+        {% else %}
+            <p><b>Seems you don't have a nickname</b></p>
+        {% endif %}
+
+        {% if session.userinfo.picture %}
+            <img src="{{ session.userinfo.picture }}" alt="{{ session.userinfo.name }}" style="width: 100%; max-width: 150px;"><br />
+        {% else %}
+            <p><b>Seems you don't have a picture</b></p>
+        {% endif %}
+
+        <p ><b><a href="/dashboard">Dashboard</a><b></p>
+
+    {% else %}
+        <p>Login</p>
+    {% endif %}
+</main>
