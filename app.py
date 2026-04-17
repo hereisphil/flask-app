@@ -77,7 +77,7 @@ def dashboard():
 @app.route("/settings")
 @requires_auth
 def settings():
-    return render_template("settings.html", session=session.get("user"), pretty=json.dumps(session.get("user"), indent=4))
+    return render_template("settings.html", title="Settings", session=session.get("user"), userinfo=json.dumps(session.get("user")))
 
 
 if __name__ == "__main__":
