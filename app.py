@@ -69,7 +69,7 @@ def requires_auth(f):
 @app.route("/dashboard")
 @requires_auth
 def dashboard():
-    return render_template("dashboard.html", session=session.get("user"), pretty=json.dumps(session.get("user"), indent=4))
+    return render_template("dashboard.html", title="Dashboard", session=session.get("user"), userinfo=json.dumps(session.get("user")))
 
 # ---------------------------------------------------------------------------- #
 #                          ADDITONAL PROTECTED ROUTE:                          #

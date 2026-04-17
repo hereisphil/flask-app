@@ -1,11 +1,31 @@
-<div class="user-logged-in auth0 userdetails">
-    <h1>Dashboard</h1>
+{% extends "base_template.html" %}
 
+{% block content %}
+<div>
     {% if session %}
-        Welcome {{ session.userinfo.name }}<br />
-        <a href="/settings">Settings</a> <br />
-        {{ pretty }}
+        <h2 style="text-align: center;">Welcome {{ session.userinfo.name }}</h2>
+        <p style="text-align: center;">Go to: <b><a href="/settings">Settings</a></b></p>
+        <hr />
+        <span id="userinfo" style="display: none;">{{ userinfo }}</span>
+        <ul id="my-list" style="max-width: 600px; overflow-wrap: break-word; list-style: none;"></ul>
     {% else %}
-        Login <br />
+    <p><b>Please <a href="/login">Login</a><b></p>
     {% endif %}
 </div>
+<script>
+    const userinfo = document.getElementById("userinfo").innerHTML;
+    const userinfoParsed = JSON.parse(userinfo);
+    console.log(userinfoParsed)
+    const listContainer = document.getElementById("my-list");
+    const listItems = Object.entries(userinfoParsed).map(([key, value]) => {
+        const displayValue = typeof value === 'object' 
+            ? JSON.stringify(value) 
+            : value;
+            
+        return `<li><strong>${key}:</strong> ${displayValue}</li>`;
+        })
+        .join('');
+
+    listContainer.innerHTML = `${listItems}`;
+</script>
+{% endblock content %}
