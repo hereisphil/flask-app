@@ -1,13 +1,11 @@
-from flask import Flask, redirect, url_for, render_template, request, session
+from flask import Flask, redirect, url_for, render_template, session
 from datetime import timedelta
 import json
-import jsonify
 
 from os import environ as env
 from dotenv import load_dotenv
 #Followed this guide: https://developer.vonage.com/en/blog/python-environment-variables-a-primer
 
-from urllib.parse import quote_plus, urlencode
 from authlib.integrations.flask_client import OAuth
 from functools import wraps
 
@@ -33,6 +31,7 @@ auth0 = oauth.register(
     #https://dev-eqdktnmkmwc3yxn8.us.auth0.com/.well-known/oauth-authorization-server
 )
 
+app.permanent_session_lifetime = timedelta(minutes=15) #Setup auto session expiration
 app.config["SESSION_TYPE"] = "filesystem"
 
 class AuthError(Exception):
