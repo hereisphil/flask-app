@@ -39,9 +39,11 @@ class AuthError(Exception):
         self.error = error
         self.status_code = status_code
 
+#Learned Jinja Templating from this guide:
+#https://realpython.com/primer-on-jinja-templating/
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index.html", title="Welcome to my Auth0 App")
 
 @app.route("/login")
 def login():
