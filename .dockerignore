@@ -1,0 +1,5 @@
+.venv
+.env.example
+.gitignore
+example_google_profile.json
+README.md
