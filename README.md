@@ -95,12 +95,6 @@ Once the server is active, open your browser and navigate to:
 * **Security**: The app uses `load_dotenv` to ensure that API secrets are never hardcoded in the source logic, following industry best practices for environment variable management.
 * **Session Persistence**: The `permanent_session_lifetime` is set to 15 minutes to balance user convenience with security.
 
------
-
-## 👋 Author
-
-Hi! I’m Phillip Cantu, a current [Full Sail University](https://www.fullsail.edu/) web development student, _expected graduation February 2027_, a current [Flatiron School Accelerated AI Engineering Immersive](https://flatironschool.com/courses/work-integrated-programs/) *student* and *apprentice*, and finally a [4Geeks Academy Full Stack](https://www.phillipcantu.com/certificate.pdf) bootcamp graduate.
-
 - **GitHub:** [hereisphil](https://github.com/hereisphil)
 - **LinkedIn:** [phillipcantu](https://www.linkedin.com/in/phillipcantu/)
 - **Email:** [thereisphil@gmail.com](mailto:thereisphil@gmail.com)
